@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "www.pilla.dev/precache-manifest.bda5fca42c964c599899bde7f14a30cf.js"
+  "/joseph-pilla/precache-manifest.6d5c471f82c0acebc09ca15143b841ea.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("www.pilla.dev/index.html", {
+workbox.routing.registerNavigationRoute("/joseph-pilla/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
