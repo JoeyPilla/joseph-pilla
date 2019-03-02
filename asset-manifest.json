@@ -1,14 +1,14 @@
 {
-  "main.css": "/joseph-pilla/static/css/main.1d0b8b82.chunk.css",
-  "main.js": "/joseph-pilla/static/js/main.b2b781e5.chunk.js",
-  "main.js.map": "/joseph-pilla/static/js/main.b2b781e5.chunk.js.map",
-  "runtime~main.js": "/joseph-pilla/static/js/runtime~main.0ce2b5cc.js",
-  "runtime~main.js.map": "/joseph-pilla/static/js/runtime~main.0ce2b5cc.js.map",
-  "static/js/2.5bf9b2cd.chunk.js": "/joseph-pilla/static/js/2.5bf9b2cd.chunk.js",
-  "static/js/2.5bf9b2cd.chunk.js.map": "/joseph-pilla/static/js/2.5bf9b2cd.chunk.js.map",
-  "index.html": "/joseph-pilla/index.html",
-  "precache-manifest.6d5c471f82c0acebc09ca15143b841ea.js": "/joseph-pilla/precache-manifest.6d5c471f82c0acebc09ca15143b841ea.js",
-  "service-worker.js": "/joseph-pilla/service-worker.js",
-  "static/css/main.1d0b8b82.chunk.css.map": "/joseph-pilla/static/css/main.1d0b8b82.chunk.css.map",
-  "static/media/logo.svg": "/joseph-pilla/static/media/logo.5d5d9eef.svg"
+  "main.css": "/static/css/main.1d0b8b82.chunk.css",
+  "main.js": "/static/js/main.d30bba64.chunk.js",
+  "main.js.map": "/static/js/main.d30bba64.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
+  "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
+  "static/js/2.5bf9b2cd.chunk.js": "/static/js/2.5bf9b2cd.chunk.js",
+  "static/js/2.5bf9b2cd.chunk.js.map": "/static/js/2.5bf9b2cd.chunk.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.c943be5bec9f1e40821a1b746c3078b7.js": "/precache-manifest.c943be5bec9f1e40821a1b746c3078b7.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/main.1d0b8b82.chunk.css.map": "/static/css/main.1d0b8b82.chunk.css.map",
+  "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
 }
