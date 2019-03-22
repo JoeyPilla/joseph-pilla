@@ -6,9 +6,9 @@ export default class Footer extends Component {
     return (
       <FooterContainer>
         <nav>
-          <Li><A href='https://www.facebook.com/joey.pilla'>Facebook</A></Li>
-          <Li><A href='https://github.com/JoeyPilla'>Github</A></Li>
-          <Li><A href='https://www.instagram.com/joey_pilla6/'>Instagram</A></Li>
+          <Li color='#3b5998'><A href='https://www.facebook.com/joey.pilla'>Facebook</A></Li>
+          <Li color='#6cc644'><A href='https://github.com/JoeyPilla'>Github</A></Li>
+          <Li color='#833AB4'><A href='https://www.instagram.com/joey_pilla6/'>Instagram</A></Li>
         </nav>
       </FooterContainer>
     )
@@ -24,6 +24,7 @@ const FooterContainer = styled.div`
 `
 
 const Li = styled.li`
+  background: ${props => props.color}
   display: inline;
   padding: 10px;
 `
