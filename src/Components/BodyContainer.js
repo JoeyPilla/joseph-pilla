@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import AnimatedDiv from '../Elements/AnimatedDiv';
 
-export default function PageContainer({ children }) {
+export default function BodyContainer({ children }) {
   return (
     <BodyWrapper>
       <AnimatedDiv>
@@ -15,6 +15,8 @@ export default function PageContainer({ children }) {
 const BodyWrapper = styled.div`
   margin-top: ${props => props.position}
   opacity: ${props => props.opacity}
+  position: relative;
+  padding: 0 20% 30%;
   display: flex;
   flex-direction: column;
   align-self: center;

@@ -11,18 +11,21 @@ import Cooking from './Cooking';
 import Contact from './Contact';
 import { THEME } from '../util';
 
-
 export default function App() {
   const url = window.location.href;
   const splitUrl = url.split('/');
   const page = splitUrl[splitUrl.length - 1].toLowerCase();
   const themeColor = THEME[page] ? THEME[page].color : THEME.home.color;
   const [color, setColor] = useState(themeColor);
-
+  const [currentPage, setCurrentPage] = useState(page);
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <AppContainer>
-        <Header color={color} setColor={setColor} />
+        <Header
+          color={color}
+          currentPage={currentPage}
+          setColor={setColor}
+          setCurrentPage={setCurrentPage}/>
         <Switch>
           <Route exact path='/about' component={About} />
           <Route exact path='/projects' component={Projects} />
@@ -41,7 +44,7 @@ export default function App() {
 const AppContainer = styled.div`
   display: grid;
   color: white;
-  grid-template: 75px 1fr 50px / auto;
+  grid-template: 50px 1fr 50px / auto;
   height: 100vh;
   width: 100vw;
 `;
