@@ -3,15 +3,15 @@ export const THEME = {
     color: '#00000000',
   },
   about: {
-    color: '#0DD269aa',
+    color: '#0DD269',
   },
   projects: {
-    color: '#3399FFaa',
+    color: '#3399FF',
   },
   cooking: {
-    color: '#FF5F5Faa',
+    color: '#FF5F5F',
   },
   contact: {
-    color: '#913CFFaa',
+    color: '#913CFF',
   },
 }

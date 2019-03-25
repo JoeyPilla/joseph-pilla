@@ -13,10 +13,11 @@ export default function PageContainer({ children }) {
 }
 
 const BodyWrapper = styled.div`
-  margin-top: ${props => props.position}
-  opacity: ${props => props.opacity}
   display: flex;
   flex-direction: column;
   align-self: center;
   grid-area: 2 / 1 / 3 / -1;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 2%;
 `;

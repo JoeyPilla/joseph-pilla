@@ -10,7 +10,7 @@ export default function HeaderDiv({children, color}) {
 
   return (
     <HeaderBackground>
-      <animated.div style={{ height, background: c }}>
+      <animated.div style={{ height, background: c, position: 'sticky', top: 0}}>
         {children}
       </animated.div>
     </HeaderBackground>
@@ -20,4 +20,7 @@ export default function HeaderDiv({children, color}) {
 const HeaderBackground = styled.div`
   grid-area: 1 / 1 / 2 / -1;
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 `;

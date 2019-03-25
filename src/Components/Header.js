@@ -43,7 +43,10 @@ const HeaderContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-area: 1 / 1 / 2 / -1;
+  position: sticky;
+  top: 0;
   height: 100%;
+  z-index: 100;
 `;
 
 const H1 = styled(Link)`

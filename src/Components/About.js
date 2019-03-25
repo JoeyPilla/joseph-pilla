@@ -1,78 +1,72 @@
 import React from 'react'
 import PageContainer from './PageContainer';
-import { H1 } from '../Elements/headers';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { THEME } from '../util';
 
-export default function About() {
+export default function About({setColor, setCurrentPage}) {
   return (
     <PageContainer>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ante nunc, ultricies at enim sed, efficitur venenatis neque. Proin tincidunt commodo feugiat. Integer in vulputate diam. Nullam scelerisque imperdiet ante non ullamcorper. Proin molestie maximus est sed ultrices. In facilisis enim sed commodo pharetra. Integer varius arcu vel justo venenatis aliquam ut et augue. Duis pretium felis ligula, et euismod tellus auctor id. In eleifend porttitor lacus, non aliquam turpis scelerisque et.
-  
-  Cras consequat justo at eleifend euismod. Vestibulum sagittis tincidunt justo sed vulputate. Vivamus viverra faucibus diam non pellentesque. Proin in sodales dui. Etiam porta tempus fringilla. Mauris vel massa id risus congue euismod. Pellentesque faucibus, libero at suscipit volutpat, ligula erat gravida odio, non commodo quam enim vel ante. Pellentesque pellentesque maximus lacinia. Vestibulum congue mauris nec hendrerit facilisis. Ut pellentesque vel enim in elementum.
-  
-  Nulla maximus, orci malesuada aliquet commodo, felis magna faucibus enim, ut facilisis nisl libero sit amet mauris. Morbi tincidunt semper urna, sit amet dapibus lectus ullamcorper eu. Donec viverra eu tellus eget sollicitudin. Phasellus laoreet sem eros. Aenean ut dui non mi hendrerit posuere sagittis quis mi. Fusce non purus imperdiet, ornare sapien nec, luctus ipsum. Mauris vel elit quis metus dapibus malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse leo est, vestibulum ac maximus id, dictum eu lectus.
-  
-  Nam porttitor euismod leo, porttitor convallis ante egestas vitae. Duis placerat sit amet sapien vitae scelerisque. Morbi fermentum massa vitae sapien finibus sollicitudin. Pellentesque consequat elit dolor, sit amet volutpat ante facilisis ac. Quisque ultrices id diam in pellentesque. Vivamus eget justo dolor. Praesent nec metus id enim dictum fringilla non sed ligula. Etiam dictum felis sit amet sapien ultricies, non tristique ex eleifend. Sed quis urna nec odio convallis rhoncus vitae a lorem. Nullam semper a nibh id tincidunt.
-  
-  Nunc tempor ipsum sit amet ante finibus, non feugiat urna consectetur. Donec scelerisque mauris at ante finibus dignissim. Aenean id turpis ut tortor vulputate vulputate. Fusce vel luctus sapien. Praesent a mi vitae quam sagittis accumsan. Vivamus venenatis facilisis eros ac molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate velit id augue tempus, sit amet consequat metus congue. Cras venenatis mi at ligula lacinia semper. Nam luctus quam non luctus dapibus. Duis sed massa sem.
-      </p>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ante nunc, ultricies at enim sed, efficitur venenatis neque. Proin tincidunt commodo feugiat. Integer in vulputate diam. Nullam scelerisque imperdiet ante non ullamcorper. Proin molestie maximus est sed ultrices. In facilisis enim sed commodo pharetra. Integer varius arcu vel justo venenatis aliquam ut et augue. Duis pretium felis ligula, et euismod tellus auctor id. In eleifend porttitor lacus, non aliquam turpis scelerisque et.
-  
-  Cras consequat justo at eleifend euismod. Vestibulum sagittis tincidunt justo sed vulputate. Vivamus viverra faucibus diam non pellentesque. Proin in sodales dui. Etiam porta tempus fringilla. Mauris vel massa id risus congue euismod. Pellentesque faucibus, libero at suscipit volutpat, ligula erat gravida odio, non commodo quam enim vel ante. Pellentesque pellentesque maximus lacinia. Vestibulum congue mauris nec hendrerit facilisis. Ut pellentesque vel enim in elementum.
-  
-  Nulla maximus, orci malesuada aliquet commodo, felis magna faucibus enim, ut facilisis nisl libero sit amet mauris. Morbi tincidunt semper urna, sit amet dapibus lectus ullamcorper eu. Donec viverra eu tellus eget sollicitudin. Phasellus laoreet sem eros. Aenean ut dui non mi hendrerit posuere sagittis quis mi. Fusce non purus imperdiet, ornare sapien nec, luctus ipsum. Mauris vel elit quis metus dapibus malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse leo est, vestibulum ac maximus id, dictum eu lectus.
-  
-  Nam porttitor euismod leo, porttitor convallis ante egestas vitae. Duis placerat sit amet sapien vitae scelerisque. Morbi fermentum massa vitae sapien finibus sollicitudin. Pellentesque consequat elit dolor, sit amet volutpat ante facilisis ac. Quisque ultrices id diam in pellentesque. Vivamus eget justo dolor. Praesent nec metus id enim dictum fringilla non sed ligula. Etiam dictum felis sit amet sapien ultricies, non tristique ex eleifend. Sed quis urna nec odio convallis rhoncus vitae a lorem. Nullam semper a nibh id tincidunt.
-  
-  Nunc tempor ipsum sit amet ante finibus, non feugiat urna consectetur. Donec scelerisque mauris at ante finibus dignissim. Aenean id turpis ut tortor vulputate vulputate. Fusce vel luctus sapien. Praesent a mi vitae quam sagittis accumsan. Vivamus venenatis facilisis eros ac molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate velit id augue tempus, sit amet consequat metus congue. Cras venenatis mi at ligula lacinia semper. Nam luctus quam non luctus dapibus. Duis sed massa sem.
-      </p>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ante nunc, ultricies at enim sed, efficitur venenatis neque. Proin tincidunt commodo feugiat. Integer in vulputate diam. Nullam scelerisque imperdiet ante non ullamcorper. Proin molestie maximus est sed ultrices. In facilisis enim sed commodo pharetra. Integer varius arcu vel justo venenatis aliquam ut et augue. Duis pretium felis ligula, et euismod tellus auctor id. In eleifend porttitor lacus, non aliquam turpis scelerisque et.
-  
-  Cras consequat justo at eleifend euismod. Vestibulum sagittis tincidunt justo sed vulputate. Vivamus viverra faucibus diam non pellentesque. Proin in sodales dui. Etiam porta tempus fringilla. Mauris vel massa id risus congue euismod. Pellentesque faucibus, libero at suscipit volutpat, ligula erat gravida odio, non commodo quam enim vel ante. Pellentesque pellentesque maximus lacinia. Vestibulum congue mauris nec hendrerit facilisis. Ut pellentesque vel enim in elementum.
-  
-  Nulla maximus, orci malesuada aliquet commodo, felis magna faucibus enim, ut facilisis nisl libero sit amet mauris. Morbi tincidunt semper urna, sit amet dapibus lectus ullamcorper eu. Donec viverra eu tellus eget sollicitudin. Phasellus laoreet sem eros. Aenean ut dui non mi hendrerit posuere sagittis quis mi. Fusce non purus imperdiet, ornare sapien nec, luctus ipsum. Mauris vel elit quis metus dapibus malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse leo est, vestibulum ac maximus id, dictum eu lectus.
-  
-  Nam porttitor euismod leo, porttitor convallis ante egestas vitae. Duis placerat sit amet sapien vitae scelerisque. Morbi fermentum massa vitae sapien finibus sollicitudin. Pellentesque consequat elit dolor, sit amet volutpat ante facilisis ac. Quisque ultrices id diam in pellentesque. Vivamus eget justo dolor. Praesent nec metus id enim dictum fringilla non sed ligula. Etiam dictum felis sit amet sapien ultricies, non tristique ex eleifend. Sed quis urna nec odio convallis rhoncus vitae a lorem. Nullam semper a nibh id tincidunt.
-  
-  Nunc tempor ipsum sit amet ante finibus, non feugiat urna consectetur. Donec scelerisque mauris at ante finibus dignissim. Aenean id turpis ut tortor vulputate vulputate. Fusce vel luctus sapien. Praesent a mi vitae quam sagittis accumsan. Vivamus venenatis facilisis eros ac molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate velit id augue tempus, sit amet consequat metus congue. Cras venenatis mi at ligula lacinia semper. Nam luctus quam non luctus dapibus. Duis sed massa sem.
-      </p>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ante nunc, ultricies at enim sed, efficitur venenatis neque. Proin tincidunt commodo feugiat. Integer in vulputate diam. Nullam scelerisque imperdiet ante non ullamcorper. Proin molestie maximus est sed ultrices. In facilisis enim sed commodo pharetra. Integer varius arcu vel justo venenatis aliquam ut et augue. Duis pretium felis ligula, et euismod tellus auctor id. In eleifend porttitor lacus, non aliquam turpis scelerisque et.
-  
-  Cras consequat justo at eleifend euismod. Vestibulum sagittis tincidunt justo sed vulputate. Vivamus viverra faucibus diam non pellentesque. Proin in sodales dui. Etiam porta tempus fringilla. Mauris vel massa id risus congue euismod. Pellentesque faucibus, libero at suscipit volutpat, ligula erat gravida odio, non commodo quam enim vel ante. Pellentesque pellentesque maximus lacinia. Vestibulum congue mauris nec hendrerit facilisis. Ut pellentesque vel enim in elementum.
-  
-  Nulla maximus, orci malesuada aliquet commodo, felis magna faucibus enim, ut facilisis nisl libero sit amet mauris. Morbi tincidunt semper urna, sit amet dapibus lectus ullamcorper eu. Donec viverra eu tellus eget sollicitudin. Phasellus laoreet sem eros. Aenean ut dui non mi hendrerit posuere sagittis quis mi. Fusce non purus imperdiet, ornare sapien nec, luctus ipsum. Mauris vel elit quis metus dapibus malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse leo est, vestibulum ac maximus id, dictum eu lectus.
-  
-  Nam porttitor euismod leo, porttitor convallis ante egestas vitae. Duis placerat sit amet sapien vitae scelerisque. Morbi fermentum massa vitae sapien finibus sollicitudin. Pellentesque consequat elit dolor, sit amet volutpat ante facilisis ac. Quisque ultrices id diam in pellentesque. Vivamus eget justo dolor. Praesent nec metus id enim dictum fringilla non sed ligula. Etiam dictum felis sit amet sapien ultricies, non tristique ex eleifend. Sed quis urna nec odio convallis rhoncus vitae a lorem. Nullam semper a nibh id tincidunt.
-  
-  Nunc tempor ipsum sit amet ante finibus, non feugiat urna consectetur. Donec scelerisque mauris at ante finibus dignissim. Aenean id turpis ut tortor vulputate vulputate. Fusce vel luctus sapien. Praesent a mi vitae quam sagittis accumsan. Vivamus venenatis facilisis eros ac molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate velit id augue tempus, sit amet consequat metus congue. Cras venenatis mi at ligula lacinia semper. Nam luctus quam non luctus dapibus. Duis sed massa sem.
-      </p>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ante nunc, ultricies at enim sed, efficitur venenatis neque. Proin tincidunt commodo feugiat. Integer in vulputate diam. Nullam scelerisque imperdiet ante non ullamcorper. Proin molestie maximus est sed ultrices. In facilisis enim sed commodo pharetra. Integer varius arcu vel justo venenatis aliquam ut et augue. Duis pretium felis ligula, et euismod tellus auctor id. In eleifend porttitor lacus, non aliquam turpis scelerisque et.
-
-Cras consequat justo at eleifend euismod. Vestibulum sagittis tincidunt justo sed vulputate. Vivamus viverra faucibus diam non pellentesque. Proin in sodales dui. Etiam porta tempus fringilla. Mauris vel massa id risus congue euismod. Pellentesque faucibus, libero at suscipit volutpat, ligula erat gravida odio, non commodo quam enim vel ante. Pellentesque pellentesque maximus lacinia. Vestibulum congue mauris nec hendrerit facilisis. Ut pellentesque vel enim in elementum.
-
-Nulla maximus, orci malesuada aliquet commodo, felis magna faucibus enim, ut facilisis nisl libero sit amet mauris. Morbi tincidunt semper urna, sit amet dapibus lectus ullamcorper eu. Donec viverra eu tellus eget sollicitudin. Phasellus laoreet sem eros. Aenean ut dui non mi hendrerit posuere sagittis quis mi. Fusce non purus imperdiet, ornare sapien nec, luctus ipsum. Mauris vel elit quis metus dapibus malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse leo est, vestibulum ac maximus id, dictum eu lectus.
-
-Nam porttitor euismod leo, porttitor convallis ante egestas vitae. Duis placerat sit amet sapien vitae scelerisque. Morbi fermentum massa vitae sapien finibus sollicitudin. Pellentesque consequat elit dolor, sit amet volutpat ante facilisis ac. Quisque ultrices id diam in pellentesque. Vivamus eget justo dolor. Praesent nec metus id enim dictum fringilla non sed ligula. Etiam dictum felis sit amet sapien ultricies, non tristique ex eleifend. Sed quis urna nec odio convallis rhoncus vitae a lorem. Nullam semper a nibh id tincidunt.
-
-Nunc tempor ipsum sit amet ante finibus, non feugiat urna consectetur. Donec scelerisque mauris at ante finibus dignissim. Aenean id turpis ut tortor vulputate vulputate. Fusce vel luctus sapien. Praesent a mi vitae quam sagittis accumsan. Vivamus venenatis facilisis eros ac molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate velit id augue tempus, sit amet consequat metus congue. Cras venenatis mi at ligula lacinia semper. Nam luctus quam non luctus dapibus. Duis sed massa sem.
-      </p>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ante nunc, ultricies at enim sed, efficitur venenatis neque. Proin tincidunt commodo feugiat. Integer in vulputate diam. Nullam scelerisque imperdiet ante non ullamcorper. Proin molestie maximus est sed ultrices. In facilisis enim sed commodo pharetra. Integer varius arcu vel justo venenatis aliquam ut et augue. Duis pretium felis ligula, et euismod tellus auctor id. In eleifend porttitor lacus, non aliquam turpis scelerisque et.
-
-Cras consequat justo at eleifend euismod. Vestibulum sagittis tincidunt justo sed vulputate. Vivamus viverra faucibus diam non pellentesque. Proin in sodales dui. Etiam porta tempus fringilla. Mauris vel massa id risus congue euismod. Pellentesque faucibus, libero at suscipit volutpat, ligula erat gravida odio, non commodo quam enim vel ante. Pellentesque pellentesque maximus lacinia. Vestibulum congue mauris nec hendrerit facilisis. Ut pellentesque vel enim in elementum.
-
-Nulla maximus, orci malesuada aliquet commodo, felis magna faucibus enim, ut facilisis nisl libero sit amet mauris. Morbi tincidunt semper urna, sit amet dapibus lectus ullamcorper eu. Donec viverra eu tellus eget sollicitudin. Phasellus laoreet sem eros. Aenean ut dui non mi hendrerit posuere sagittis quis mi. Fusce non purus imperdiet, ornare sapien nec, luctus ipsum. Mauris vel elit quis metus dapibus malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse leo est, vestibulum ac maximus id, dictum eu lectus.
-
-Nam porttitor euismod leo, porttitor convallis ante egestas vitae. Duis placerat sit amet sapien vitae scelerisque. Morbi fermentum massa vitae sapien finibus sollicitudin. Pellentesque consequat elit dolor, sit amet volutpat ante facilisis ac. Quisque ultrices id diam in pellentesque. Vivamus eget justo dolor. Praesent nec metus id enim dictum fringilla non sed ligula. Etiam dictum felis sit amet sapien ultricies, non tristique ex eleifend. Sed quis urna nec odio convallis rhoncus vitae a lorem. Nullam semper a nibh id tincidunt.
-
-Nunc tempor ipsum sit amet ante finibus, non feugiat urna consectetur. Donec scelerisque mauris at ante finibus dignissim. Aenean id turpis ut tortor vulputate vulputate. Fusce vel luctus sapien. Praesent a mi vitae quam sagittis accumsan. Vivamus venenatis facilisis eros ac molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate velit id augue tempus, sit amet consequat metus congue. Cras venenatis mi at ligula lacinia semper. Nam luctus quam non luctus dapibus. Duis sed massa sem.
-      </p>
-      <H1 color={THEME.about.color}>About</H1>
+      <P>
+        Hey, I'm Joey.
+      </P>
+      <P>
+        I'm an up-and-coming full stack Javascript developer specializing in React and Node. 
+        I graduated from The Ohio State University in May of 2018 with a degree in Electrical and Computer Engineering, specializing in Computer Engineering.
+      </P>
+      <P>
+      Since graduation I have become passionate about programming and have create multiple react 
+      <A 
+      to='/projects'
+      onClick={() => {
+        setCurrentPage('projects')
+        setColor(THEME.projects.color)
+      }
+      }
+      > projects </A> 
+      in my free time and a few projects for work. 
+      I have also begun to play around with React Native and iOS development. 
+      Technologies that I am familiar with include: JavaScript, React.js, Node.js, Express.js, MongoDB, GraphQL, Next.js, React Router, React Spring, Styled Components, React Native, Git, HTML5, CSS3, C++, C, Java, Python, and MATLAB.
+      </P>
+      <P>
+        Outside of work and programming, I love to 
+        <A 
+        to='/cooking'
+        onClick={() => {
+          setCurrentPage('cooking')
+          setColor(THEME.cooking.color)
+        }}> cook </A>
+        and am trying to get my 
+        <A 
+        to='/cooking'
+        onClick={() => {
+          setCurrentPage('cooking')
+          setColor(THEME.cooking.color)
+        }}> cooking </A>
+        portion of this website up and running. 
+        The mountains are another passion of mine. 
+        I love to both ski and snowboard as well as go hiking during the summer months.
+      </P>
+      <P>
+        Please feel free to 
+        <A 
+          to='/contact'
+          onClick={() => {
+            setCurrentPage('contact')
+            setColor(THEME.contact.color)
+          }}> contact me </A>
+        if you would like to chat or to discuss project opportunities.
+      </P>
     </PageContainer >
   )
 }
+
+const A = styled(Link)`
+  color: ${THEME.about.color};
+  height: 100%;
+  text-decoration: none;
+`;
+
+const P = styled.p`
+  font-size: 2.5rem;
+`

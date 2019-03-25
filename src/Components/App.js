@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 import Header from './Header';
 import Body from './Body';
@@ -18,6 +19,13 @@ export default function App() {
   const themeColor = THEME[page] ? THEME[page].color : THEME.home.color;
   const [color, setColor] = useState(themeColor);
   const [currentPage, setCurrentPage] = useState(page);
+
+  const props = useSpring({
+    from:{ opacity: 0 },
+    to:  { opacity: 1 },
+    reset: true,
+  });
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <AppContainer>
@@ -27,15 +35,49 @@ export default function App() {
           setColor={setColor}
           setCurrentPage={setCurrentPage}/>
         <Switch>
-          <Route exact path='/about' component={About} />
-          <Route exact path='/projects' component={Projects} />
-          <Route exact path='/cooking' component={Cooking} />
-          <Route exact path='/contact' component={Contact} />
+          <Route 
+            exact 
+            path='/about' 
+            render={() => (
+              <About 
+                setColor={setColor}
+                setCurrentPage={setCurrentPage}/>)}/>
+          <Route 
+            exact 
+            path='/projects' 
+            render={() => (
+              <Projects
+                setColor={setColor}
+                setCurrentPage={setCurrentPage}/>)}/>
+          <Route 
+            exact 
+            path='/cooking' 
+            render={() => (
+              <Cooking 
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}/>)}/>
+          <Route 
+            exact 
+            path='/contact' 
+            render={() => (
+              <Contact
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}/>)}/>
           <Route component={Body} />
         </Switch>
         <Footer />
-        <Background src={background} />
-        <Overlay />
+        {
+          currentPage === ''
+            ? <>
+                <Background 
+                  src={background} 
+                  page={currentPage} 
+                  style={props} />
+                <Overlay />
+              </>
+            : <BackgroundBlack/>
+            
+        }
       </AppContainer>
     </Router>
   );
@@ -49,12 +91,21 @@ const AppContainer = styled.div`
   width: 100vw;
 `;
 
-const Background = styled.img`
+const Background = styled(animated.img)`
   grid-area: 1 / 1 / -1 / -1;
   height: 100%;
   width: 100%;
   filter: contrast(1);
   z-index: -2;
+  object-fit: cover;
+`;
+const BackgroundBlack = styled(animated.div)`
+  grid-area: 1 / 1 / -1 / -1;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: -1;
+  opacity: .9;
   object-fit: cover;
 `;
 
