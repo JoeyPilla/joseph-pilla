@@ -1,12 +1,24 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { THEME } from '../util';
 import HeaderDiv from '../Elements/HeaderDiv';
 import TitleDiv from './TitleDiv';
 
+function useWindowWidth() {
+  useEffect(() => {
+    const handleResize = () => console.log(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+}
+
+
 export default function Header(props) {
   const { color, setColor, setCurrentPage, currentPage } = props;
+  const [dropdown, setdropdown] = useState(false);
   const links = ['about', 'projects', 'cooking', 'contact'];
   const list = links.map((link, i) => {
     return (
@@ -20,6 +32,7 @@ export default function Header(props) {
       </Li>
     )
   })
+ useWindowWidth()
   return (
     <>
       <HeaderDiv color={color}/>
@@ -30,10 +43,15 @@ export default function Header(props) {
         }}>
           JP
         </H1>
-        <TitleDiv currentPage={currentPage}/>
-        <Nav>
-          {list}
-        </Nav>
+        <TitleDiv currentPage={currentPage} />
+        {
+          dropdown ? <Nav2>
+            {list}
+          </Nav2> : <> </>
+        }
+        <H3 onClick={() => setdropdown(!dropdown)}>
+          M
+        </H3>
       </HeaderContainer>
     </>
   )
@@ -61,10 +79,31 @@ const H1 = styled(Link)`
 `;
 
 const Nav = styled.nav`
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+`;
+
+const Nav2 = styled.nav`
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 100%;
+`;
+
+const H3 = styled.h1`
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
 `;
 
 const Li = styled.li`
