@@ -52,12 +52,10 @@ const HeaderContainer = styled.div`
 const H1 = styled(Link)`
   display: flex;
   justify-content: flex-start;
-  align-self: center;
-  margin:0px;
-  font-size: 3rem;
+  padding-left: 5px;
+  font-size: 2rem;
   font-weight: bold;
   color: white;
-  height: 100%;
   text-decoration: none;
   cursor: pointer;
 `;
@@ -83,4 +81,3 @@ const A = styled(Link)`
   height: 100%;
   text-decoration: none;
 `;
-

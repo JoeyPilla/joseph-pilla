@@ -14,23 +14,18 @@ export default function TitleDiv({children, currentPage}) {
         <Title>
           {currentPage}
         </Title>
-        {children}
       </animated.div>
     </>
   )
 }
 
 const Title = styled.h1`
-height:100%;
   display: flex;
   justify-content: center;
-  transition: background-color 1s ease;
-  align-self: center;
   margin:0px;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #ffffffbb;
-  padding-top: 5px;
   text-transform: capitalize;
   cursor: default;
 `;

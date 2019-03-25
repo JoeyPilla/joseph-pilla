@@ -35,30 +35,30 @@ export default function App() {
           setColor={setColor}
           setCurrentPage={setCurrentPage}/>
         <Switch>
-          <Route 
-            exact 
-            path='/about' 
+          <Route
+            exact
+            path='/about'
             render={() => (
-              <About 
+              <About
                 setColor={setColor}
                 setCurrentPage={setCurrentPage}/>)}/>
-          <Route 
-            exact 
-            path='/projects' 
+          <Route
+            exact
+            path='/projects'
             render={() => (
               <Projects
                 setColor={setColor}
                 setCurrentPage={setCurrentPage}/>)}/>
-          <Route 
-            exact 
-            path='/cooking' 
+          <Route
+            exact
+            path='/cooking'
             render={() => (
-              <Cooking 
+              <Cooking
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}/>)}/>
-          <Route 
-            exact 
-            path='/contact' 
+          <Route
+            exact
+            path='/contact'
             render={() => (
               <Contact
                 currentPage={currentPage}
@@ -69,14 +69,14 @@ export default function App() {
         {
           currentPage === ''
             ? <>
-                <Background 
-                  src={background} 
-                  page={currentPage} 
+                <Background
+                  src={background}
+                  page={currentPage}
                   style={props} />
                 <Overlay />
               </>
             : <BackgroundBlack/>
-            
+
         }
       </AppContainer>
     </Router>
@@ -88,7 +88,6 @@ const AppContainer = styled.div`
   color: white;
   grid-template: 50px 1fr 50px / auto;
   height: 100vh;
-  width: 100vw;
 `;
 
 const Background = styled(animated.img)`
