@@ -46,12 +46,15 @@ export default function Header(props) {
         <TitleDiv currentPage={currentPage} />
         {
           dropdown ? <Nav2>
-            {list}
-          </Nav2> : <> </>
-        }
-        <H3 onClick={() => setdropdown(!dropdown)}>
-          M
+            {list}        <H3 onClick={() => setdropdown(!dropdown)}>
+              M
         </H3>
+          </Nav2> : <Nav2>
+              <H3 onClick={() => setdropdown(!dropdown)}>
+                M
+        </H3>
+            </Nav2>
+        }
       </HeaderContainer>
     </>
   )
@@ -92,7 +95,7 @@ const Nav2 = styled.nav`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 100%;
+  height: 50%;
 `;
 
 const H3 = styled.h1`
