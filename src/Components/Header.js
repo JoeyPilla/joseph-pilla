@@ -44,17 +44,12 @@ export default function Header(props) {
           JP
         </H1>
         <TitleDiv currentPage={currentPage} />
-        {
-          dropdown ? <Nav2>
-            {list}        <H3 onClick={() => setdropdown(!dropdown)}>
-              M
-        </H3>
-          </Nav2> : <Nav2>
+            <Nav2>
+              {dropdown && list}
               <H3 onClick={() => setdropdown(!dropdown)}>
                 M
-        </H3>
+              </H3>
             </Nav2>
-        }
       </HeaderContainer>
     </>
   )
