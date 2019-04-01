@@ -8,6 +8,7 @@ import { THEME } from '../util';
 export default function Projects() {
   return (
     <PageContainer>
+      <Title>Projects</Title>
       <div>
         <P>
           <A href='https://github.com/JoeyPilla/devices'>
@@ -84,9 +85,17 @@ const A = styled.a`
   text-decoration: none;
 `;
 
-const P = styled.p`
+const Title = styled.h1`
+  color: ${THEME.projects.color+'aa'};
+  height: 100%;
+  text-decoration: none;
+  padding-left: 50px;
   font-size: 2.5rem;
+`;
+
+const P = styled.p`
+  font-size: 2rem;
 `
 const P2 = styled.p`
-  font-size: 2rem;
+  font-size: 1.5rem;
 `

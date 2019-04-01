@@ -7,6 +7,7 @@ import { THEME } from '../util';
 export default function About({setColor, setCurrentPage}) {
   return (
     <PageContainer>
+      <Title>About</Title>
       <P>
         Hey, I'm Joey.
       </P>
@@ -68,5 +69,13 @@ const A = styled(Link)`
 `;
 
 const P = styled.p`
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 `
+
+const Title = styled.h1`
+  color: ${THEME.about.color+'aa'};
+  height: 100%;
+  text-decoration: none;
+  padding-left: 50px;
+  font-size: 2.5rem;
+`;

@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { THEME } from '../util';
 import HeaderDiv from '../Elements/HeaderDiv';
-import TitleDiv from './TitleDiv';
-
+import { FaRegCaretSquareLeft } from "react-icons/fa";
 function useWindowWidth() {
   useEffect(() => {
     const handleResize = () => console.log(window.innerWidth);
@@ -43,13 +42,14 @@ export default function Header(props) {
         }}>
           JP
         </H1>
-        <TitleDiv currentPage={currentPage} />
             <Nav2>
-              {dropdown && list}
-              <H3 onClick={() => setdropdown(!dropdown)}>
-                M
-              </H3>
-            </Nav2>
+          {dropdown && list}
+        </Nav2>
+        <Nav2>
+          <H3 onClick={() => setdropdown(!dropdown)}>
+          <FaRegCaretSquareLeft/>
+          </H3>
+        </Nav2>
       </HeaderContainer>
     </>
   )
