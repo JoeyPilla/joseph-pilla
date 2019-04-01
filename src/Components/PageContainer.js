@@ -1,23 +1,35 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
-import AnimatedDiv from '../Elements/AnimatedDiv';
+import { useSpring, animated } from 'react-spring';
 
-export default function PageContainer({ children }) {
+export default function PageContainer({children}) {
+  const {opacity, transform} = useSpring({
+    from:{
+      opacity: 0,
+      transform: "translate3d(0,-500px,0)"
+    },
+    to:{ opacity: 1, transform: "translate3d(0,0,0)" }
+  });
   return (
-    <BodyWrapper>
-      <AnimatedDiv>
+    <BodyWrapper
+      style={{
+        transform,
+        opacity,
+      }}>
         {children}
-      </AnimatedDiv>
     </BodyWrapper>
   )
 }
 
-const BodyWrapper = styled.div`
+const BodyWrapper = styled(animated.div)`
+  align-items: center;
+  align-self: center;
   display: flex;
   flex-direction: column;
-  align-self: center;
   grid-area: 2 / 1 / 3 / -1;
-  margin-left: 3%;
-  margin-right: 3%;
-  margin-top: 2%;
+  justify-self: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  max-width: 900px;
 `;

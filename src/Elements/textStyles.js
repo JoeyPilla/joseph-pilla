@@ -17,12 +17,12 @@ export const LinkA = styled.a`
 
 export const Text = styled.p`
   font-size: 1.5rem;
-`
+`;
 
 export const Title = styled.h1`
   color: ${props => props.page ? THEME[props.page].color : ''};
-  height: 100%;
-  text-decoration: none;
-  padding-left: 50px;
   font-size: 3rem;
+  height: 100%;
+  padding-left: 50px;
+  text-decoration: none;
 `;

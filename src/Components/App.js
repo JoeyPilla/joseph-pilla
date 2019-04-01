@@ -26,43 +26,42 @@ export default function App() {
     reset: true,
   });
 
+  function handlePageChange(page) {
+    setCurrentPage(page);
+    setColor(THEME[page].color);
+  }
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <AppContainer>
         <Header
           color={color}
-          currentPage={currentPage}
-          setColor={setColor}
-          setCurrentPage={setCurrentPage}/>
+          currentPage={currentPage}/>
         <Switch>
           <Route
             exact
             path='/about'
             render={() => (
               <About
-                setColor={setColor}
-                setCurrentPage={setCurrentPage}/>)}/>
+                handlePageChange={handlePageChange}/>)}/>
           <Route
             exact
             path='/projects'
             render={() => (
               <Projects
-                setColor={setColor}
-                setCurrentPage={setCurrentPage}/>)}/>
+                handlePageChange={handlePageChange}/>)}/>
           <Route
             exact
             path='/cooking'
             render={() => (
               <Cooking
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}/>)}/>
+                handlePageChange={handlePageChange}/>)}/>
           <Route
             exact
             path='/contact'
             render={() => (
               <Contact
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}/>)}/>
+                handlePageChange={handlePageChange}/>)}/>
           <Route component={Body} />
         </Switch>
         <Footer />

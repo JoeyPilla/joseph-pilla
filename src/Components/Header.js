@@ -15,16 +15,14 @@ function useWindowWidth() {
 }
 
 
-export default function Header(props) {
-  const { color, setColor, setCurrentPage, currentPage } = props;
+export default function Header({ color, handlePageChange, currentPage }) {
   const [dropdown, setdropdown] = useState(false);
   const links = ['about', 'projects', 'cooking', 'contact'];
   const list = links.map((link, i) => {
     return (
       <Li key={i}>
         <A to={`/${link}`} onClick={() => {
-          setColor(THEME[link].color)
-          setCurrentPage(link)
+          handlePageChange(link)
         }}>
           {link}
         </A>
@@ -37,8 +35,7 @@ export default function Header(props) {
       <HeaderDiv color={color}>
         <HeaderContainer>
           <H1 to='/' onClick={() => {
-            setColor(THEME.home.color)
-            setCurrentPage('')
+            handlePageChange('')
           }}>
             JP
         </H1>

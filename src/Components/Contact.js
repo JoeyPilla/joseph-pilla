@@ -5,7 +5,7 @@ import { LinkA, Text, Title } from '../Elements/textStyles';
 export default function Contact() {
   return (
     <PageContainer>
-            <Title page={"contact"}>Contact</Title>
+      <Title page={"contact"}>Contact</Title>
       <Text>
         Feel free to contact me through my email at
         <LinkA
