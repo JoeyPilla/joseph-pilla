@@ -1,79 +1,64 @@
 import React from 'react'
 import PageContainer from './PageContainer';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, Text, Title } from '../Elements/textStyles';
 import { THEME } from '../util';
 
 export default function About({setColor, setCurrentPage}) {
   return (
     <PageContainer>
-      <Title>About</Title>
-      <P>
+      <Title page={"about"}>About</Title>
+      <Text>
         Hey, I'm Joey.
-      </P>
-      <P>
+      </Text>
+      <Text>
         I'm an up-and-coming full stack Javascript developer specializing in React and Node.
         I graduated from The Ohio State University in May of 2018 with a degree in Electrical and Computer Engineering, specializing in Computer Engineering.
-      </P>
-      <P>
+      </Text>
+      <Text>
       Since graduation I have become passionate about programming and have create multiple react
-      <A
+      <Link
+      page={"about"}
       to='/projects'
       onClick={() => {
           setCurrentPage('projects')
           setColor(THEME.projects.color)
-      }}> projects </A>
+      }}> projects </Link>
       in my free time and a few projects for work.
       I have also begun to play around with React Native and iOS development.
       Technologies that I am familiar with include: JavaScript, React.js, Node.js, Express.js, MongoDB, GraphQL, Next.js, React Router, React Spring, Styled Components, React Native, Git, HTML5, CSS3, C++, C, Java, Python, and MATLAB.
-      </P>
-      <P>
+      </Text>
+      <Text>
         Outside of work and programming, I love to
-        <A
+        <Link
+        page={"about"}
         to='/cooking'
         onClick={() => {
           setCurrentPage('cooking')
           setColor(THEME.cooking.color)
-        }}> cook </A>
+        }}> cook </Link>
         and am trying to get my
-        <A
+        <Link
+        page={"about"}
         to='/cooking'
         onClick={() => {
           setCurrentPage('cooking')
           setColor(THEME.cooking.color)
-        }}> cooking </A>
+        }}> cooking </Link>
         portion of this website up and running.
         The mountains are another passion of mine.
         I love to both ski and snowboard as well as go hiking during the summer months.
-      </P>
-      <P>
+      </Text>
+      <Text>
         Please feel free to
-        <A
+        <Link
+          page={"about"}
           to='/contact'
           onClick={() => {
             setCurrentPage('contact')
             setColor(THEME.contact.color)
-          }}> contact me </A>
+          }}> contact me </Link>
         if you would like to chat or to discuss project opportunities.
-      </P>
+      </Text>
     </PageContainer >
   )
 }
-
-const A = styled(Link)`
-  color: ${THEME.about.color};
-  height: 100%;
-  text-decoration: none;
-`;
-
-const P = styled.p`
-  font-size: 1.5rem;
-`
-
-const Title = styled.h1`
-  color: ${THEME.about.color+'aa'};
-  height: 100%;
-  text-decoration: none;
-  padding-left: 50px;
-  font-size: 2.5rem;
-`;
