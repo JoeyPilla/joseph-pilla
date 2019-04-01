@@ -34,23 +34,24 @@ export default function Header(props) {
  useWindowWidth()
   return (
     <>
-      <HeaderDiv color={color}/>
-      <HeaderContainer newHeaderColor={color}>
-        <H1 to='/' onClick={() => {
-          setColor(THEME.home.color)
-          setCurrentPage('')
-        }}>
-          JP
+      <HeaderDiv color={color}>
+        <HeaderContainer>
+          <H1 to='/' onClick={() => {
+            setColor(THEME.home.color)
+            setCurrentPage('')
+          }}>
+            JP
         </H1>
-            <Nav2>
-          {dropdown && list}
-        </Nav2>
-        <Nav2>
-          <H3 onClick={() => setdropdown(!dropdown)}>
-          <FaRegCaretSquareLeft/>
-          </H3>
-        </Nav2>
-      </HeaderContainer>
+          <Nav>
+            {dropdown && list}
+          </Nav>
+          <Nav>
+            <H3 onClick={() => setdropdown(!dropdown)}>
+              <FaRegCaretSquareLeft />
+            </H3>
+          </Nav>
+        </HeaderContainer>
+      </HeaderDiv>
     </>
   )
 }
@@ -77,16 +78,6 @@ const H1 = styled(Link)`
 `;
 
 const Nav = styled.nav`
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100%;
-`;
-
-const Nav2 = styled.nav`
   display: flex;
   justify-content: flex-end;
   align-items: center;
