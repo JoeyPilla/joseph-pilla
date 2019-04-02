@@ -9,7 +9,7 @@ export const Link = styled(RouterLink)`
 `;
 
 export const LinkA = styled.a`
-  color: ${ props => props.page ? THEME[props.page].color : ''};
+  color: ${ props => props.page ? THEME[props.page].color : 'white'};
   font-size: ${ props => props.size ? props.size : ''};
   height: 100%;
   text-decoration: none;
@@ -25,4 +25,18 @@ export const Title = styled.h1`
   height: 100%;
   padding-left: 50px;
   text-decoration: none;
+`;
+
+export const MainTitle = styled.h1`
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
+  font-family: Roboto;
+  font-size: 3rem;
+  color: white;
+  color: ${props => props.color};
+`;
+
+export const List = styled.li`
+  background: ${props => props.color};
+  display: inline;
+  padding: 10px;
 `;

@@ -1,24 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import HeaderDiv from '../Elements/HeaderDiv';
+import { useSpring, animated } from 'react-spring';
 import { FaRegCaretSquareLeft } from "react-icons/fa";
 import { HeaderContainer } from '../Elements/containerStyles';
-
-// function useWindowWidth() {
-//   useEffect(() => {
-//     const handleResize = () => console.log(window.innerWidth);
-//     window.addEventListener('resize', handleResize);
-//     return () => {
-//       window.removeEventListener('resize', handleResize);
-//     };
-//   });
-// }
+import { HeaderBackground } from '../Elements/backgroundStyles';
 
 export default function Header({ color, handlePageChange }) {
   const [dropdown, setdropdown] = useState(false);
   const links = ['about', 'projects', 'cooking', 'contact']; // different pages
-  
+
   // map each page to a header
   const list = links.map((link, i) => {
     return (
@@ -32,26 +23,38 @@ export default function Header({ color, handlePageChange }) {
     )
   })
 
-//  useWindowWidth()
+  // set header background animation
+  const { height, c } = useSpring({
+    from: { height: 0, c: '#00000000' },
+    to: { height: 50, c: color },
+  });
+
+  // set toggle animation
+  const { transform, opacity } = useSpring({
+    transform: dropdown ? "translate3d(0,0,0)" : "translate3d(-500px,0,0)",
+    opacity: dropdown ? 1.0 : 0.0,
+  });
+
+
   return (
     <>
-      <HeaderDiv color={color}>
+      <HeaderBackground style={{ height, background: c}}>
         <HeaderContainer>
           <H1
             to='/'
             onClick={() => {handlePageChange('home')}}>
             JP
           </H1>
-          <Nav>
-            {dropdown && list}
-          </Nav>
-          <Nav>
+          <Temp>
+            <Nav style={{ transform, opacity}}>
+              {list}
+            </Nav>
             <H3 onClick={() => setdropdown(!dropdown)}>
               <FaRegCaretSquareLeft />
             </H3>
-          </Nav>
+          </Temp>
         </HeaderContainer>
-      </HeaderDiv>
+      </HeaderBackground>
     </>
   )
 }
@@ -68,11 +71,19 @@ const H1 = styled(Link)`
   cursor: pointer;
 `;
 
-const Nav = styled.nav`
+const Nav = styled(animated.nav)`
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 50%;
+`;
+
+
+const Temp = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
 `;
 
 const H3 = styled.h1`

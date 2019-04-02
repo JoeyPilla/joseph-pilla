@@ -8,16 +8,6 @@ export const AppContainer = styled.div`
   height: 100vh;
 `;
 
-export const HeaderContainer = styled.div`
-  display: grid;
-  grid-area: 1 / 1 / 2 / -1;
-  grid-template-columns: 1fr 1fr 1fr;
-  height: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-`;
-
 export const BodyContainer = styled(animated.div)`
   margin-top: ${props => props.position}
   opacity: ${props => props.opacity}
@@ -27,4 +17,23 @@ export const BodyContainer = styled(animated.div)`
   flex-direction: column;
   align-self: center;
   grid-area: 2 / 1 / 3 / -1;
+  overflow: auto;
+`;
+
+export const FooterContainer = styled.div`
+  grid-area: 3 / 1 / 4 / -1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+`;
+
+export const HeaderContainer = styled.div`
+  display: grid;
+  grid-area: 1 / 1 / 2 / -1;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 `;

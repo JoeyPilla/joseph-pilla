@@ -1,6 +1,10 @@
 import React from 'react'
 import PageContainer from './PageContainer';
-import { Link, Text, Title } from '../Elements/textStyles';
+// import {
+//   Link,
+//   Text,
+//   Title,
+// } from '../Elements/textStyles';
 
 export default function Cooking() {
   return (

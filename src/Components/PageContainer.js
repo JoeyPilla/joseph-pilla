@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated} from 'react-spring';
 
 export default function PageContainer({children}) {
-  const {opacity, transform} = useSpring({
+  const { opacity, transform } = useSpring({
     from:{
       opacity: 0,
       transform: "translate3d(0,-500px,0)"

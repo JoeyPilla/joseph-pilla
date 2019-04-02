@@ -1,6 +1,10 @@
 import React from 'react'
 import PageContainer from './PageContainer';
-import { LinkA, Text, Title } from '../Elements/textStyles';
+import {
+  LinkA,
+  Text,
+  Title,
+} from '../Elements/textStyles';
 
 export default function Projects() {
   return (

@@ -1,6 +1,10 @@
 import React from 'react'
 import PageContainer from './PageContainer';
-import { Link, Text, Title } from '../Elements/textStyles';
+import {
+  Link,
+  Text,
+  Title,
+} from '../Elements/textStyles';
 
 export default function About({ handlePageChange }) {
   return (
@@ -27,7 +31,7 @@ export default function About({ handlePageChange }) {
           page={'about'}
           to='/cooking'
           onClick={() => { handlePageChange('cooking') }}>
-          cook </Link>
+          {' '}cook </Link>
         and am trying to get my
         <Link
           page={"about"}

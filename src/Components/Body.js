@@ -1,11 +1,14 @@
-import React from 'react'
-import { Text } from '../Elements/textStyles';
-import { H1 } from '../Elements/headers';
-import {BodyContainer} from '../Elements/containerStyles';
+import React from 'react';
 import { useSpring } from 'react-spring';
+import {BodyContainer} from '../Elements/containerStyles';
+import {
+  Text,
+  MainTitle,
+} from '../Elements/textStyles';
 
 export default function Body() {
 
+  // set styles with react spring to run on load
   const {opacity, transform} = useSpring({
     from:{
       opacity: 0,
@@ -19,7 +22,7 @@ export default function Body() {
       transform,
       opacity,
     }}>
-      <H1>I am Joseph Pilla</H1>
+      <MainTitle>I am Joseph Pilla</MainTitle>
       <Text>A full stack web developer</Text>
     </BodyContainer>
   )

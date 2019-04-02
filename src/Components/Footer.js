@@ -1,39 +1,24 @@
 import React from 'react'
-import styled from 'styled-components';
+import { FooterContainer } from '../Elements/containerStyles';
+import {
+  LinkA,
+  List,
+} from '../Elements/textStyles';
 
 export default function Footer() {
   return (
     <FooterContainer>
       <nav>
-        <Li color='#3b5998'>
-          <A href='https://www.facebook.com/joey.pilla'>Facebook</A>
-        </Li>
-        <Li color='#6cc644'>
-          <A href='https://github.com/JoeyPilla'>Github</A>
-        </Li>
-        <Li color='#833AB4'>
-          <A href='https://www.instagram.com/joey_pilla6/'>Instagram</A>
-        </Li>
+        <List color='#3b5998'>
+          <LinkA href='https://www.facebook.com/joey.pilla'>Facebook</LinkA>
+        </List>
+        <List color='#6cc644'>
+          <LinkA href='https://github.com/JoeyPilla'>Github</LinkA>
+        </List>
+        <List color='#833AB4'>
+          <LinkA href='https://www.instagram.com/joey_pilla6/'>Instagram</LinkA>
+        </List>
       </nav>
     </FooterContainer>
   )
 }
-
-const FooterContainer = styled.div`
-  grid-area: 3 / 1 / 4 / -1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 20px;
-`;
-
-const Li = styled.li`
-  background: ${props => props.color};
-  display: inline;
-  padding: 10px;
-`;
-
-const A = styled.a`
-color: white;
-text-decoration: none;
-`;

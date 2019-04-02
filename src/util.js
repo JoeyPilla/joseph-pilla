@@ -15,3 +15,9 @@ export const THEME = {
     color: '#913CFF',
   },
 }
+
+export function getStartingPage(link) {
+  let splitLink = link.split('/');
+  let currentPage = splitLink[splitLink.length - 1]
+  return currentPage !== '' ? currentPage : 'home';
+}
