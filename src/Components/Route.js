@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import {  Route as ReactRouterRoute} from 'react-router-dom';
+import {
+  Route as ReactRouterRoute,
+} from 'react-router-dom';
 import About from './About';
 
 export default function Route({ title, children }) {

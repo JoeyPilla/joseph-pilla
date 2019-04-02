@@ -81,7 +81,6 @@ export default function Projects() {
         </Text>
       </div>
       <div>
-
         <LinkA
           href='https://github.com/JoeyPilla/task-manager'
           page={"projects"}

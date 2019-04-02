@@ -1,5 +1,7 @@
 import React from 'react';
-import { useSpring } from 'react-spring';
+import {
+  useSpring,
+} from 'react-spring';
 import background from '../background.jpg';
 import {
   BackgroundImage,

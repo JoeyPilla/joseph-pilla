@@ -12,9 +12,9 @@ export const BackgroundImage = styled.img`
 
 export const HeaderBackground = styled(animated.div)`
   grid-area: 1 / 1 / 2 / -1;
-  width: 100%;
   position: sticky;
   top: 0;
+  width: 100%;
   z-index: 100;
 `;
 

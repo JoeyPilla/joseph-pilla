@@ -1,9 +1,13 @@
 import React from 'react';
-import { useSpring } from 'react-spring';
-import {BodyContainer} from '../Elements/containerStyles';
 import {
-  Text,
+  useSpring,
+} from 'react-spring';
+import {
+  BodyContainer,
+} from '../Elements/containerStyles';
+import {
   MainTitle,
+  Text,
 } from '../Elements/textStyles';
 
 export default function Body() {

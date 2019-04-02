@@ -1,5 +1,7 @@
 import React from 'react'
-import { FooterContainer } from '../Elements/containerStyles';
+import {
+  FooterContainer,
+} from '../Elements/containerStyles';
 import {
   LinkA,
   List,

@@ -4,10 +4,12 @@ import Background from './Background';
 import Footer from './Footer';
 import Header from './Header';
 import Switch from './Switch';
-import { AppContainer } from '../Elements/containerStyles';
 import {
-  THEME,
+  AppContainer,
+} from '../Elements/containerStyles';
+import {
   getStartingPage,
+  THEME,
 } from '../util';
 
 export default function App() {
