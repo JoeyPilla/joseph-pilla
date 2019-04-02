@@ -1,44 +1,47 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { THEME } from '../util';
 import HeaderDiv from '../Elements/HeaderDiv';
 import { FaRegCaretSquareLeft } from "react-icons/fa";
-function useWindowWidth() {
-  useEffect(() => {
-    const handleResize = () => console.log(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  });
-}
+import { HeaderContainer } from '../Elements/containerStyles';
 
+// function useWindowWidth() {
+//   useEffect(() => {
+//     const handleResize = () => console.log(window.innerWidth);
+//     window.addEventListener('resize', handleResize);
+//     return () => {
+//       window.removeEventListener('resize', handleResize);
+//     };
+//   });
+// }
 
-export default function Header({ color, handlePageChange, currentPage }) {
+export default function Header({ color, handlePageChange }) {
   const [dropdown, setdropdown] = useState(false);
-  const links = ['about', 'projects', 'cooking', 'contact'];
+  const links = ['about', 'projects', 'cooking', 'contact']; // different pages
+  
+  // map each page to a header
   const list = links.map((link, i) => {
     return (
       <Li key={i}>
-        <A to={`/${link}`} onClick={() => {
-          handlePageChange(link)
-        }}>
+        <A
+          to={`/${link}`}
+          onClick={() => handlePageChange(link)}>
           {link}
         </A>
       </Li>
     )
   })
- useWindowWidth()
+
+//  useWindowWidth()
   return (
     <>
       <HeaderDiv color={color}>
         <HeaderContainer>
-          <H1 to='/' onClick={() => {
-            handlePageChange('')
-          }}>
+          <H1
+            to='/'
+            onClick={() => {handlePageChange('home')}}>
             JP
-        </H1>
+          </H1>
           <Nav>
             {dropdown && list}
           </Nav>
@@ -53,15 +56,6 @@ export default function Header({ color, handlePageChange, currentPage }) {
   )
 }
 
-const HeaderContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-area: 1 / 1 / 2 / -1;
-  position: sticky;
-  top: 0;
-  height: 100%;
-  z-index: 100;
-`;
 
 const H1 = styled(Link)`
   display: flex;

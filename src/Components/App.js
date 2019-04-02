@@ -1,29 +1,33 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useSpring, animated } from 'react-spring';
-import styled from 'styled-components';
-import Header from './Header';
-import Body from './Body';
+import { useSpring } from 'react-spring';
 import About from './About';
-import Footer from './Footer';
-import background from '../background.jpg';
-import Projects from './Projects';
-import Cooking from './Cooking';
+import Body from './Body';
 import Contact from './Contact';
+import Cooking from './Cooking';
+import Footer from './Footer';
+import Header from './Header';
+import Projects from './Projects';
+import background from '../background.jpg';
+import { AppContainer } from '../Elements/containerStyles';
+import {
+  Background,
+  BackgroundBlack,
+  Overlay,
+} from '../Elements/backgroundStyles';
 import { THEME } from '../util';
 
 export default function App() {
-  const url = window.location.href;
-  const splitUrl = url.split('/');
-  const page = splitUrl[splitUrl.length - 1].toLowerCase();
-  const themeColor = THEME[page] ? THEME[page].color : THEME.home.color;
-  const [color, setColor] = useState(themeColor);
+  const page = 'home';
+  const themeColor  = THEME[page] ? THEME[page].color : THEME.home.color;
+
+  const [color, setColor]             = useState(themeColor);
   const [currentPage, setCurrentPage] = useState(page);
 
   const props = useSpring({
-    from:{ opacity: 0 },
-    to:  { opacity: 1 },
-    reset: true,
+    from:   { opacity: 0 },
+    to:     { opacity: 1 },
+    reset:  true,
   });
 
   function handlePageChange(page) {
@@ -36,7 +40,8 @@ export default function App() {
       <AppContainer>
         <Header
           color={color}
-          currentPage={currentPage}/>
+          currentPage={currentPage}
+          handlePageChange={handlePageChange}/>/>
         <Switch>
           <Route
             exact
@@ -66,7 +71,7 @@ export default function App() {
         </Switch>
         <Footer />
         {
-          currentPage === ''
+          currentPage === 'home'
             ? <>
                 <Background
                   src={background}
@@ -81,37 +86,3 @@ export default function App() {
     </Router>
   );
 }
-
-const AppContainer = styled.div`
-  display: grid;
-  color: white;
-  grid-template: 50px 1fr 50px / auto;
-  height: 100vh;
-`;
-
-const Background = styled(animated.img)`
-  grid-area: 1 / 1 / -1 / -1;
-  height: 100%;
-  width: 100%;
-  filter: contrast(1);
-  z-index: -2;
-  object-fit: cover;
-`;
-const BackgroundBlack = styled(animated.div)`
-  grid-area: 1 / 1 / -1 / -1;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  z-index: -1;
-  opacity: .9;
-  object-fit: cover;
-`;
-
-const Overlay = styled.div`
-  grid-area: 1 / 1 / -1 / -1;
-  height: 100%;
-  width: 100%;
-  opacity: .7;
-  background-color: black;
-  z-index: -1;
-`;
