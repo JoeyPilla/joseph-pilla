@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 import { FaRegCaretSquareLeft } from "react-icons/fa";
-import { HeaderContainer } from '../Elements/containerStyles';
+import { HeaderContainer, NavContainer } from '../Elements/containerStyles';
 import { HeaderBackground } from '../Elements/backgroundStyles';
 
 export default function Header({ color, handlePageChange }) {
@@ -45,14 +45,14 @@ export default function Header({ color, handlePageChange }) {
             onClick={() => {handlePageChange('home')}}>
             JP
           </H1>
-          <Temp>
+          <NavContainer>
             <Nav style={{ transform, opacity}}>
               {list}
             </Nav>
             <H3 onClick={() => setdropdown(!dropdown)}>
               <FaRegCaretSquareLeft />
             </H3>
-          </Temp>
+          </NavContainer>
         </HeaderContainer>
       </HeaderBackground>
     </>
@@ -76,14 +76,6 @@ const Nav = styled(animated.nav)`
   justify-content: flex-end;
   align-items: center;
   height: 50%;
-`;
-
-
-const Temp = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 50px;
 `;
 
 const H3 = styled.h1`

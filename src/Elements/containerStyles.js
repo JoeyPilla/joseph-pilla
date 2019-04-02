@@ -37,3 +37,10 @@ export const HeaderContainer = styled.div`
   top: 0;
   z-index: 100;
 `;
+
+export const NavContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
+`;
