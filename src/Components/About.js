@@ -5,15 +5,19 @@ import {
   Text,
   Title,
 } from '../Elements/textStyles';
+import {ABOUT} from './data';
 
 export default function About({ handlePageChange }) {
+  const about = ABOUT.map((line) => {
+    return <Text>{line}</Text>
+  })
   return (
     <PageContainer>
       <Title page={'about'}>About</Title>
       <Text>
         Hey, I'm Joey.
-      </Text>
-      <Text>
+        <br/>
+        <br/>
         I'm an up-and-coming full stack Javascript developer specializing in React and Node. I graduated from The Ohio State University in May of 2018 with a degree in Electrical and Computer Engineering, specializing in Computer Engineering.
       </Text>
       <Text>
