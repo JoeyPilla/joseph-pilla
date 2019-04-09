@@ -9,15 +9,14 @@ export const AppContainer = styled.div`
 `;
 
 export const BodyContainer = styled(animated.div)`
-  align-self: center;
   display: flex;
   flex-direction: column;
+  align-self: flex-start;
   grid-area: 2 / 1 / 3 / -1;
   margin-top: ${props => props.position}
   opacity: ${props => props.opacity}
   overflow: auto;
   padding: 0 20% 30%;
-  position: relative;
 `;
 
 export const FooterContainer = styled.div`

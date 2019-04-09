@@ -56,7 +56,6 @@ export const Text = styled.p`
 export const Title = styled.h1`
   color: ${props => props.page ? THEME[props.page].color : ''};
   font-size: 3rem;
-  height: 100%;
   padding-left: 50px;
   text-decoration: none;
 `;

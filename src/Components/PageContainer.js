@@ -25,14 +25,12 @@ export default function PageContainer({children}) {
 }
 
 const BodyWrapper = styled(animated.div)`
-  align-items: center;
-  align-self: center;
   display: flex;
   flex-direction: column;
   grid-area: 2 / 1 / 3 / -1;
-  justify-self: center;
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 5%;
+  justify-self: center;
   max-width: 900px;
 `;
